@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "775392820844",
+    "project_id": "final-project-2-ecommerce",
+    "storage_bucket": "final-project-2-ecommerce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775392820844:android:8f27b8678cc3c3df4a2249",
+        "android_client_info": {
+          "package_name": "com.hacktiv.ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "775392820844-tr3luandrfvqr6ophe70ukqmt8efk3b3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hacktiv.ecommerce",
+            "certificate_hash": "6a4191295f9e6860eddaaeade48fe8013173930f"
+          }
+        },
+        {
+          "client_id": "775392820844-2iv66l7rma085nj1s7bomns32g9nor6c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1LWdagzjrTNJYvi_K6TvbIlfN1TpLnoY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "775392820844-2iv66l7rma085nj1s7bomns32g9nor6c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
