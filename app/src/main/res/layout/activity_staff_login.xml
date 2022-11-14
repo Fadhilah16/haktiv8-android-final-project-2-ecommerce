@@ -1,9 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.StaffLoginActivity">
+    tools:context=".activities.StaffLoginActivity"
+    android:background="@drawable/background_login_staff"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="@string/staff"
+        android:textColor="@color/black"
+        android:textSize="50dp"
+        android:textFontWeight="800"
+
+         />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:hint="@string/username"
+        android:textFontWeight="400"
+        android:textColorHighlight="@color/black"
+        android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:hint="@string/password"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/username"
+        android:textFontWeight="400"
+        android:textColorHighlight="@color/black"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:id="@+id/staffLoginBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:text="@string/login_as_staff"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/black"
+        android:textSize="15dp"
+        android:textFontWeight="800"
+        />
+
+    <ProgressBar
+        android:id="@+id/staffLoginProgressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+</RelativeLayout>

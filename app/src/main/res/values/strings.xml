@@ -1,12 +1,22 @@
 <resources>
     <string name="app_name">E-Commerce</string>
     <string name="title_activity_staff_login">StaffLoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login_as_staff">Login As Staff</string>
+    <string name="staff">Staff</string>
+    <string name="team_member_5">Team Member 5</string>
+    <string-array name="member">
+        <item>Fadhilah Rizki Fatoni</item>
+        <item>Fajar Wirahadi Kusuma</item>
+        <item>Atifah Herawati</item>
+        <item>Enok Lismawati</item>
+    </string-array>
+
+    <string-array name="member_code">
+        <item>JVAN-KS05-021</item>
+        <item>JVAN-KS05-007</item>
+        <item>JVAN-KS05-017</item>
+        <item>JVAN-KS05-019</item>
+    </string-array>
 </resources>
