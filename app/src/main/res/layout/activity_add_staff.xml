@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.StaffLoginActivity"
-    android:background="@drawable/background_login_staff"
-    >
+    tools:context=".activities.AddStaffActivity"
 
-    <TextView
+    >
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:text="@string/staff"
-        android:textColor="@color/black"
-        android:textSize="50dp"
-        android:textFontWeight="800"
-
+        android:src="@drawable/staff"
+        android:alpha="0.1"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
         />
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <EditText
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
         android:inputType="textPersonName"
         android:ems="10"
         android:hint="@string/username"
@@ -33,11 +33,24 @@
         android:textColor="@color/black"
         />
 
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:layout_centerInParent="true"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/black"
+        android:textFontWeight="400" />
+
     <FrameLayout
         android:id="@+id/passwordLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/username"
+        android:layout_below="@+id/email"
         android:layout_centerInParent="true"
         >
         <EditText
@@ -64,66 +77,56 @@
             />
     </FrameLayout>
 
-    <Button
-        android:id="@+id/staffLoginBtn"
+    <FrameLayout
+        android:id="@+id/confirmPasswordLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/passwordLayout"
-        android:layout_centerHorizontal="true"
-        android:text="@string/login_as_staff"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="@color/black"
-        android:textSize="15dp"
-        android:textFontWeight="800"
-        />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/staffLoginBtn"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
         android:layout_centerInParent="true"
         >
-        <TextView
-            android:id="@+id/moveToLogin"
+        <EditText
+            android:id="@+id/confirmPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/login"
-            android:textSize="15dp"
-            android:textColor="@color/blue"
-            android:layout_marginHorizontal="10dp"
-            android:clickable="true"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:hint="@string/confirm_password"
+            android:layout_marginTop="10dp"
+            android:textFontWeight="400"
+            android:textColorHighlight="@color/black"
+            android:textColor="@color/black"
+
             />
 
-        <TextView
-            android:id="@+id/moveToRegister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/register"
-            android:textSize="15dp"
-            android:textColor="@color/blue"
-            android:layout_marginHorizontal="10dp"
+        <ImageView
+            android:id="@+id/confirmPasswordVisibility"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/show"
+            android:layout_gravity="right|center"
             android:clickable="true"
             />
+    </FrameLayout>
 
-        <TextView
-            android:id="@+id/moveToLoginAsAdmin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/login_as_admin"
-            android:textSize="15dp"
-            android:textColor="@color/blue"
-            android:layout_marginHorizontal="10dp"
-            android:clickable="true"
-            />
+    <Button
+        android:id="@+id/staffRegisterBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/confirmPasswordLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/register_staff"
+        android:textFontWeight="800"
+        android:textSize="15dp" />
 
-    </LinearLayout>
+
     <ProgressBar
-        android:id="@+id/staffLoginProgressBar"
+        android:id="@+id/staffRegisterProgressBar"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:visibility="gone" />
 </RelativeLayout>
+</FrameLayout>

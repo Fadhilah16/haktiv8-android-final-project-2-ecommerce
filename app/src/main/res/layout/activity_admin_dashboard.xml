@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AdminDashboardActivity"
+    android:background="@drawable/background_about_us"
+    >
+<FrameLayout
+    android:id="@+id/staff_frame"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/staff_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/staff" />
+    <Button
+        android:id="@+id/addStaffBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/add_staff"
+        android:textFontWeight="800"
+        android:textSize="15dp"
+        />
+
+</FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/stock_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/staff_frame"
+        android:layout_alignParentBottom="true"
+
+        >
+
+        <ImageView
+            android:id="@+id/stock_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="0dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/stock" />
+        <Button
+            android:id="@+id/addStockBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/black"
+            android:text="@string/add_stock"
+            android:textFontWeight="800"
+            android:textSize="15dp"
+            />
+
+    </FrameLayout>
+</RelativeLayout>

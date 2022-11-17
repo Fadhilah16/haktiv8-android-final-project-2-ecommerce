@@ -2,10 +2,24 @@
     <string name="app_name">E-Commerce</string>
     <string name="title_activity_staff_login">StaffLoginActivity</string>
     <string name="username">Username</string>
+    <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
     <string name="login_as_staff">Login As Staff</string>
+    <string name="login_as_admin">Login As Admin</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="logout">Logout</string>
     <string name="staff">Staff</string>
+    <string name="admin">Admin</string>
     <string name="team_member_5">Team Member 5</string>
+    <string name="add_stock">Add Stock</string>
+    <string name="add_staff">Add Staff</string>
+    <string name="register_staff">Register Staff</string>
+    <string name="item_id">Item ID</string>
+    <string name="quantity">Quantity</string>
+    <string name="add_quantity">Add Quantity</string>
+
     <string-array name="member">
         <item>Fadhilah Rizki Fatoni</item>
         <item>Fajar Wirahadi Kusuma</item>

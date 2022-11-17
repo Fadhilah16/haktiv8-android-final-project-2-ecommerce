@@ -24,52 +24,50 @@ import com.hacktiv.ecommerce.R;
 import com.hacktiv.ecommerce.configurations.FirebaseConfig;
 import com.hacktiv.ecommerce.models.enums.RoleTypes;
 
-
-public class StaffLoginActivity extends AppCompatActivity {
+public class UserLoginActivity extends AppCompatActivity {
 
     private EditText username, password;
     private Button loginBtn;
     private ProgressBar progressBar;
-    private TextView loginLink, registerLink, loginAsAdminLink;
+    private TextView registerLink, loginAsStaffLink, loginAsAdminLink;
     private ImageView passwordVisibility;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_staff_login);
-
+        setContentView(R.layout.activity_user_login);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
-        loginBtn = findViewById(R.id.staffLoginBtn);
-        progressBar = findViewById(R.id.staffLoginProgressBar);
-        loginLink = findViewById(R.id.moveToLogin);
+        loginBtn = findViewById(R.id.userLoginBtn);
+        progressBar = findViewById(R.id.userLoginProgressBar);
         registerLink = findViewById(R.id.moveToRegister);
+        loginAsStaffLink = findViewById(R.id.moveToLoginAsStaff);
         loginAsAdminLink = findViewById(R.id.moveToLoginAsAdmin);
         passwordVisibility = findViewById(R.id.passwordVisibility);
 
         if(FirebaseConfig.auth.getCurrentUser() != null){
-            startActivity(new Intent(StaffLoginActivity.this, MainActivity.class));
+            startActivity(new Intent(UserLoginActivity.this, MainActivity.class));
             finish();
         }
 
         getSupportActionBar().hide();
         if(savedInstanceState!= null) {
-           username.setText(savedInstanceState.getString("username"));
-           password.setText(savedInstanceState.getString("password"));
+            username.setText(savedInstanceState.getString("username"));
+            password.setText(savedInstanceState.getString("password"));
         }
-
-        loginLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(StaffLoginActivity.this, UserLoginActivity.class));
-                finish();
-            }
-        });
 
         registerLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(StaffLoginActivity.this, UserRegisterActivity.class));
+                startActivity(new Intent(UserLoginActivity.this, UserRegisterActivity.class));
+                finish();
+            }
+        });
+
+        loginAsStaffLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UserLoginActivity.this, StaffLoginActivity.class));
                 finish();
             }
         });
@@ -77,7 +75,7 @@ public class StaffLoginActivity extends AppCompatActivity {
         loginAsAdminLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(StaffLoginActivity.this, AdminLoginActivity.class));
+                startActivity(new Intent(UserLoginActivity.this, AdminLoginActivity.class));
                 finish();
             }
         });
@@ -101,12 +99,12 @@ public class StaffLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (username.getText().toString().trim().isEmpty() && password.getText().toString().trim().isEmpty()){
-                    Toast.makeText(StaffLoginActivity.this, "Username and Password cannot be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserLoginActivity.this, "Username and Password cannot be empty", Toast.LENGTH_SHORT).show();
                 }else if(username.getText().toString().trim().isEmpty()){
-                        Toast.makeText(StaffLoginActivity.this, "Username cannot be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserLoginActivity.this, "Username cannot be empty", Toast.LENGTH_SHORT).show();
 
                 }else  if (password.getText().toString().trim().isEmpty()){
-                    Toast.makeText(StaffLoginActivity.this, "Password cannot be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserLoginActivity.this, "Password cannot be empty", Toast.LENGTH_SHORT).show();
                 }else{
                     progressBar.setVisibility(View.VISIBLE);
                     FirebaseConfig.firestore.collection("users").whereEqualTo("username", username.getText().toString().trim()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -121,22 +119,22 @@ public class StaffLoginActivity extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<AuthResult> task) {
 
                                             if(task.isSuccessful()){
-                                                if (document.getString("role").equals(RoleTypes.STAFF.name())){
-                                                    startActivity(new Intent(StaffLoginActivity.this, MainActivity.class));
+                                                if (document.getString("role").equals(RoleTypes.CUSTOMER.name())){
+                                                    startActivity(new Intent(UserLoginActivity.this, MainActivity.class));
                                                     finish();
                                                 }else{
-                                                    Toast.makeText(StaffLoginActivity.this, "You are not staff.", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(UserLoginActivity.this, "You are not customer.", Toast.LENGTH_SHORT).show();
                                                 }
 
                                             }else{
-                                                Toast.makeText(StaffLoginActivity.this, "Username or Password is wrong", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(UserLoginActivity.this, "Username or Password is wrong", Toast.LENGTH_SHORT).show();
                                             }
                                             progressBar.setVisibility(View.GONE);
                                         }
                                     });
                                 }
                             }else {
-                                Toast.makeText(StaffLoginActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(UserLoginActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
                             }
 
                         }
