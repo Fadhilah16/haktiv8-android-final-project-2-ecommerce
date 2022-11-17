@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="215dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/promo_slider"
+        android:layout_width="match_parent"
+        android:layout_height="205dp"
+        app:iss_auto_cycle="true"
+        app:iss_delay="5"
+        app:iss_period="1000"
+        android:background="@android:color/transparent">
+
+    </com.denzcoskun.imageslider.ImageSlider>
+
+    <LinearLayout
+        android:id="@+id/title_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:id="@+id/this_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="16dp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:text="@string/promo_title1"
+            android:textSize="22dp"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:paddingHorizontal="5dp"/>
+
+        <TextView
+            android:id="@+id/season_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="16dp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:text="@string/promo_title2"
+            android:textSize="22dp"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:layout_below="@id/this_text"
+            android:paddingHorizontal="5dp"/>
+
+        <TextView
+            android:id="@+id/latest_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="16dp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:maxLines="3"
+            android:text="@string/promo_title3"
+            android:textSize="22dp"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:layout_below="@id/season_text"
+            android:paddingHorizontal="5dp"/>
+    </LinearLayout>
+
+</RelativeLayout>
