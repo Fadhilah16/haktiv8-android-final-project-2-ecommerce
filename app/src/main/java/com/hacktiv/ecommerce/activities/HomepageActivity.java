@@ -52,6 +52,7 @@ public class HomepageActivity extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(adapter);
+        //Product
 
         productRef.addValueEventListener(new ValueEventListener() {
             @Override
