@@ -33,4 +33,9 @@
         <item>JVAN-KS05-017</item>
         <item>JVAN-KS05-019</item>
     </string-array>
+
+    <string name="promo_title1">This</string>
+    <string name="promo_title2">season\'s</string>
+    <string name="promo_title3">latest</string>
+    <string name="shop_now">SHOP NOW</string>
 </resources>
