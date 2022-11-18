@@ -48,7 +48,7 @@ public class StaffLoginActivity extends AppCompatActivity {
         passwordVisibility = findViewById(R.id.passwordVisibility);
 
         if(FirebaseConfig.auth.getCurrentUser() != null){
-            startActivity(new Intent(StaffLoginActivity.this, MainActivity.class));
+            startActivity(new Intent(StaffLoginActivity.this, HomepageActivity.class));
             finish();
         }
 
@@ -122,7 +122,7 @@ public class StaffLoginActivity extends AppCompatActivity {
 
                                             if(task.isSuccessful()){
                                                 if (document.getString("role").equals(RoleTypes.STAFF.name())){
-                                                    startActivity(new Intent(StaffLoginActivity.this, MainActivity.class));
+                                                    startActivity(new Intent(StaffLoginActivity.this, HomepageActivity.class));
                                                     finish();
                                                 }else{
                                                     Toast.makeText(StaffLoginActivity.this, "You are not staff.", Toast.LENGTH_SHORT).show();

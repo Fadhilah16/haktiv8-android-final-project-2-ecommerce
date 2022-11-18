@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +30,7 @@ public class AdminLoginActivity extends AppCompatActivity {
     private Button loginBtn;
     private ProgressBar progressBar;
     private TextView loginLink, registerLink, loginAsStaffLink;
+    private ImageView passwordVisibility;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +44,10 @@ public class AdminLoginActivity extends AppCompatActivity {
         loginLink = findViewById(R.id.moveToLogin);
         registerLink = findViewById(R.id.moveToRegister);
         loginAsStaffLink = findViewById(R.id.moveToLoginAsStaff);
+        passwordVisibility = findViewById(R.id.passwordVisibility);
 
         if(FirebaseConfig.auth.getCurrentUser() != null){
-            startActivity(new Intent(AdminLoginActivity.this, MainActivity.class));
+            startActivity(new Intent(AdminLoginActivity.this, HomepageActivity.class));
             finish();
         }
 
@@ -73,6 +78,21 @@ public class AdminLoginActivity extends AppCompatActivity {
             }
         });
 
+        passwordVisibility.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(password.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){
+                    passwordVisibility.setImageResource(R.drawable.hide);
+                    password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }else{
+                    passwordVisibility.setImageResource(R.drawable.show);
+                    password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+
+            }
+        });
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,7 +118,7 @@ public class AdminLoginActivity extends AppCompatActivity {
 
                                             if(task.isSuccessful()){
                                                 if (document.getString("role").equals(RoleTypes.ADMIN.name())){
-                                                    startActivity(new Intent(AdminLoginActivity.this, MainActivity.class));
+                                                    startActivity(new Intent(AdminLoginActivity.this, HomepageActivity.class));
                                                     finish();
                                                 }else{
                                                     Toast.makeText(AdminLoginActivity.this, "You are not admin.", Toast.LENGTH_SHORT).show();

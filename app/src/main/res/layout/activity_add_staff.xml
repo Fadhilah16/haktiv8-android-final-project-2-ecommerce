@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.AddStaffActivity"
-
     >
+
+    <include layout="@layout/layout_action_bar2"/>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

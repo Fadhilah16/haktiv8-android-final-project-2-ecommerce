@@ -46,7 +46,7 @@ public class UserLoginActivity extends AppCompatActivity {
         passwordVisibility = findViewById(R.id.passwordVisibility);
 
         if(FirebaseConfig.auth.getCurrentUser() != null){
-            startActivity(new Intent(UserLoginActivity.this, MainActivity.class));
+            startActivity(new Intent(UserLoginActivity.this, HomepageActivity.class));
             finish();
         }
 
@@ -120,7 +120,7 @@ public class UserLoginActivity extends AppCompatActivity {
 
                                             if(task.isSuccessful()){
                                                 if (document.getString("role").equals(RoleTypes.CUSTOMER.name())){
-                                                    startActivity(new Intent(UserLoginActivity.this, MainActivity.class));
+                                                    startActivity(new Intent(UserLoginActivity.this, HomepageActivity.class));
                                                     finish();
                                                 }else{
                                                     Toast.makeText(UserLoginActivity.this, "You are not customer.", Toast.LENGTH_SHORT).show();

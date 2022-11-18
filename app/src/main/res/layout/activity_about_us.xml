@@ -7,6 +7,7 @@
     tools:context=".activities.AboutUsActivity"
     android:background="@drawable/background_about_us"
     >
+   <include layout="@layout/layout_action_bar2"/>
 
     <TextView
         android:id="@+id/aboutUsTitle"
@@ -46,7 +47,6 @@
                     android:id="@+id/member1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fadhilah R.F."
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     />
@@ -56,7 +56,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/member1"
-                    android:text="JVAN-KS05-021"
                     android:textColor="@color/grey"
                     android:textSize="15dp" />
             </RelativeLayout>
@@ -79,7 +78,6 @@
                     android:id="@+id/member2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fadhilah R.F."
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     />
@@ -89,7 +87,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/member2"
-                    android:text="JVAN-KS05-021"
                     android:textColor="@color/grey"
                     android:textSize="15dp" />
             </RelativeLayout>
@@ -112,7 +109,6 @@
                     android:id="@+id/member3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fadhilah R.F."
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     />
@@ -122,7 +118,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/member3"
-                    android:text="JVAN-KS05-021"
                     android:textColor="@color/grey"
                     android:textSize="15dp" />
             </RelativeLayout>
@@ -145,7 +140,6 @@
                     android:id="@+id/member4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fadhilah R.F."
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     />
@@ -155,7 +149,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/member4"
-                    android:text="JVAN-KS05-021"
                     android:textColor="@color/grey"
                     android:textSize="15dp" />
             </RelativeLayout>

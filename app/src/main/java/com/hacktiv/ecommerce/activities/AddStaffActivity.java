@@ -36,7 +36,7 @@ public class AddStaffActivity extends AppCompatActivity {
     private EditText username, email, password, confirmPassword;
     private Button registerBtn;
     private ProgressBar progressBar;
-    private ImageView passwordVisibility, confirmPasswordVisibility;
+    private ImageView passwordVisibility, confirmPasswordVisibility, backIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +51,7 @@ public class AddStaffActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.staffRegisterProgressBar);
         passwordVisibility = findViewById(R.id.passwordVisibility);
         confirmPasswordVisibility = findViewById(R.id.confirmPasswordVisibility);
+        backIcon = findViewById(R.id.back_icon);
 
         getSupportActionBar().hide();
         if(savedInstanceState!= null) {
@@ -145,9 +146,21 @@ public class AddStaffActivity extends AppCompatActivity {
             }
         });
 
+        backIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
 
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+        super.onBackPressed();
+    }
 
     private void createStaff(){
         FirebaseConfig.auth.createUserWithEmailAndPassword(email.getText().toString().trim(), password.getText().toString()).addOnCompleteListener(AddStaffActivity.this, new OnCompleteListener<AuthResult>() {

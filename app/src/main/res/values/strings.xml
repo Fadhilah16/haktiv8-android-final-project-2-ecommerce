@@ -19,7 +19,8 @@
     <string name="item_id">Item ID</string>
     <string name="quantity">Quantity</string>
     <string name="add_quantity">Add Quantity</string>
-
+    <string name="dashboard">Dashboard</string>
+    <string name="home">Home</string>
     <string-array name="member">
         <item>Fadhilah Rizki Fatoni</item>
         <item>Fajar Wirahadi Kusuma</item>

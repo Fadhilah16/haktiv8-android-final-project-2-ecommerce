@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -12,11 +14,17 @@ import com.hacktiv.ecommerce.R;
 public class AboutUsActivity extends AppCompatActivity {
    private TextView[] members;
    private TextView[] memberCodes;
+   private ImageView backIcon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
+
+        getSupportActionBar().hide();
         Resources res = getResources();
+        backIcon = findViewById(R.id.back_icon);
+
         members = new TextView[4];
         memberCodes = new TextView[4];
         for(int i=0;i<4;i++){
@@ -38,7 +46,19 @@ public class AboutUsActivity extends AppCompatActivity {
             members[i].setText(membersNames[i]);
             memberCodes[i].setText(membersCodes[i]);
         }
+        backIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        super.onBackPressed();
     }
 }

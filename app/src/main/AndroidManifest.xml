@@ -18,11 +18,12 @@
         android:theme="@style/Theme.ECommerce"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".activities.ProductStockListActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.HomepageActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".activities.AddStockActivity"
             android:exported="true" />

@@ -58,7 +58,7 @@ public class UserRegisterActivity extends AppCompatActivity {
         confirmPasswordVisibility = findViewById(R.id.confirmPasswordVisibility);
 
         if(FirebaseConfig.auth.getCurrentUser() != null){
-            startActivity(new Intent(UserRegisterActivity.this, MainActivity.class));
+            startActivity(new Intent(UserRegisterActivity.this, HomepageActivity.class));
             finish();
         }
 

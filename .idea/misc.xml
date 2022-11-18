@@ -3,14 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/final-project-2/app/src/main/res/drawable/top_menu.xml" value="0.1" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/final-project-2/app/src/main/res/drawable/underline.xml" value="0.1" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/final-project-2/app/src/main/res/drawable/user.xml" value="0.1" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/final-project-2/app/src/main/res/layout/action_bar_layout.xml" value="0.12132725430597771" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/final-project-2/app/src/main/res/layout/activity_homepage.xml" value="0.11448834853090173" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/final-project-2/app/src/main/res/layout/layout_action_bar.xml" value="0.1037037037037037" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/final-project-2/app/src/main/res/layout/layout_card_view_product.xml" value="0.1037037037037037" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/final-project-2/app/src/main/res/layout/layout_promo.xml" value="0.1" />
+        <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/drawable/dashboard.xml" value="0.201" />
+        <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/drawable/stock_rectangle.xml" value="0.1635" />
+        <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/drawable/top_menu.xml" value="0.1145" />
         <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/font/play_display.xml" value="0.21574074074074073" />
         <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/layout/activity_abous_us.xml" value="0.234375" />
         <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/layout/activity_about_us.xml" value="0.264" />
@@ -18,14 +13,22 @@
         <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/layout/activity_add_stock.xml" value="0.2359375" />
         <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.264" />
         <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/layout/activity_admin_login.xml" value="0.20989583333333334" />
+        <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/layout/activity_homepage.xml" value="0.264" />
         <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/layout/activity_product_stock_list.xml" value="0.2296875" />
         <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/layout/activity_staff_login.xml" value="0.2" />
         <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/layout/activity_user_login.xml" value="0.2" />
         <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/layout/activity_user_register.xml" value="0.2" />
+        <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/layout/layout_action_bar.xml" value="0.1984375" />
+        <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/layout/layout_action_bar2.xml" value="0.2" />
+        <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/layout/layout_card_view_product.xml" value="0.23072916666666668" />
+        <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/layout/layout_promo.xml" value="0.21041666666666667" />
+        <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/layout/product_stock_item.xml" value="0.536" />
+        <entry key="..\:/mobile apps/final-project-2-ECommerce/app/src/main/res/menu/sliding_menu.xml" value="0.2296875" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

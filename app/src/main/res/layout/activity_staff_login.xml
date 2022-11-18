@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.StaffLoginActivity"
-    android:background="@drawable/background_login_staff"
+    android:background="@drawable/background_auth"
     >
 
     <TextView
