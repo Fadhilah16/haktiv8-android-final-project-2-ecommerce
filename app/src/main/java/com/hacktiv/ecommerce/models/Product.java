@@ -2,6 +2,7 @@ package com.hacktiv.ecommerce.models;
 
 public class Product {
     String type;
+    String typeCode;
     String code;
     String name;
     String category;
@@ -9,12 +10,22 @@ public class Product {
     Integer stock;
     String img;
 
+
+
     public String getType() {
         return type;
     }
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getTypeCode() {
+        return typeCode;
+    }
+
+    public void setTypeCode(String typeCode) {
+        this.typeCode = typeCode;
     }
 
     public String getCode() {

@@ -13,7 +13,7 @@ import com.hacktiv.ecommerce.R;
 public class AdminDashboardActivity extends AppCompatActivity {
 
     private Button addStaff, addStock;
-    private ImageView backIcon;
+    private ImageView backIcon, profileIcon;;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
         addStaff = findViewById(R.id.addStaffBtn);
         addStock = findViewById(R.id.addStockBtn);
         backIcon = findViewById(R.id.back_icon);
+        profileIcon = findViewById(R.id.profile);
 
         addStaff.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +36,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
         addStock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AdminDashboardActivity.this, AddStockActivity.class));
+                startActivity(new Intent(AdminDashboardActivity.this, ProductStockListActivity.class));
             }
         });
 
@@ -43,6 +44,13 @@ public class AdminDashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+
+        profileIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminDashboardActivity.this, ProfileActivity.class));
             }
         });
     }

@@ -20,27 +20,100 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <EditText
-            android:id="@+id/itemId"
+
+
+        <LinearLayout
+            android:id="@+id/codeLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_marginTop="100dp"
-            android:layout_centerHorizontal="true"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:hint="@string/item_id"
-            android:textFontWeight="400"
-            android:textColorHighlight="@color/black"
-            android:textColor="@color/black"
-            />
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:id="@+id/codeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/code"
+                android:layout_marginHorizontal="10dp"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:id="@+id/code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="code"
+                android:textColor="@color/black"
+                android:layout_marginHorizontal="10dp"
+                android:textSize="20dp"
+                />
+
+        </LinearLayout>
+      <LinearLayout
+          android:id="@+id/nameLayout"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:layout_below="@+id/codeLayout"
+          android:layout_marginBottom="10dp"
+          >
+          <TextView
+              android:id="@+id/productNameLabel"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginHorizontal="10dp"
+              android:text="@string/product_name"
+              android:textSize="20dp"
+              />
+
+          <TextView
+              android:id="@+id/productName"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="name"
+              android:textColor="@color/black"
+              android:textSize="20dp"
+              android:layout_marginHorizontal="10dp"
+              />
+      </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stockLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/nameLayout"
+            >
+            <TextView
+                android:id="@+id/stockLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stock"
+                android:layout_marginHorizontal="10dp"
+                android:textSize="20dp"
+                />
+            <TextView
+                android:id="@+id/stock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="stock"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_marginHorizontal="10dp"
+                />
+
+        </LinearLayout>
+
 
         <EditText
             android:id="@+id/quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/itemId"
+            android:layout_below="@+id/stockLayout"
             android:layout_centerInParent="true"
-            android:ems="10"
+            android:ems="5"
             android:hint="@string/quantity"
             android:inputType="textEmailAddress"
             android:textColor="@color/black"

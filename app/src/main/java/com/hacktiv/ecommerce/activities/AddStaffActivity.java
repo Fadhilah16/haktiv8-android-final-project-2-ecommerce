@@ -36,7 +36,7 @@ public class AddStaffActivity extends AppCompatActivity {
     private EditText username, email, password, confirmPassword;
     private Button registerBtn;
     private ProgressBar progressBar;
-    private ImageView passwordVisibility, confirmPasswordVisibility, backIcon;
+    private ImageView passwordVisibility, confirmPasswordVisibility, backIcon, profileIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +52,7 @@ public class AddStaffActivity extends AppCompatActivity {
         passwordVisibility = findViewById(R.id.passwordVisibility);
         confirmPasswordVisibility = findViewById(R.id.confirmPasswordVisibility);
         backIcon = findViewById(R.id.back_icon);
+        profileIcon = findViewById(R.id.profile);
 
         getSupportActionBar().hide();
         if(savedInstanceState!= null) {
@@ -150,6 +151,13 @@ public class AddStaffActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+
+        profileIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AddStaffActivity.this, ProfileActivity.class));
             }
         });
 

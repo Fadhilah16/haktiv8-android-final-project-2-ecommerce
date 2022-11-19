@@ -45,7 +45,7 @@ public class HomepageActivity extends FragmentActivity {
     DatabaseReference productRef, categoriesProductRef, databasePromo;
     ImageSlider imageSlider;
     DrawerLayout drawer;
-    ImageView menuImg;
+    ImageView menuImg, profileIcon;
     NavigationView navView;
 
     @Override
@@ -61,6 +61,7 @@ public class HomepageActivity extends FragmentActivity {
         drawer = findViewById(R.id.drawer_layout);
         menuImg = findViewById(R.id.menu_icon);
         navView = findViewById(R.id.nav_view);
+        profileIcon = findViewById(R.id.profile);
 
         FirebaseConfig.firestore.collection("users").document( FirebaseConfig.auth.getCurrentUser().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -159,6 +160,13 @@ public class HomepageActivity extends FragmentActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        profileIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomepageActivity.this, ProfileActivity.class));
             }
         });
     }

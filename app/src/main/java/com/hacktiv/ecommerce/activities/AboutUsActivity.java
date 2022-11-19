@@ -2,6 +2,7 @@ package com.hacktiv.ecommerce.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +15,7 @@ import com.hacktiv.ecommerce.R;
 public class AboutUsActivity extends AppCompatActivity {
    private TextView[] members;
    private TextView[] memberCodes;
-   private ImageView backIcon;
+    private ImageView backIcon, profileIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class AboutUsActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         Resources res = getResources();
         backIcon = findViewById(R.id.back_icon);
+        profileIcon = findViewById(R.id.profile);
 
         members = new TextView[4];
         memberCodes = new TextView[4];
@@ -53,6 +55,12 @@ public class AboutUsActivity extends AppCompatActivity {
             }
         });
 
+        profileIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AboutUsActivity.this, ProfileActivity.class));
+            }
+        });
 
     }
 

@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -21,8 +23,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductStockListActivity extends AppCompatActivity {
-    RecyclerView listView;
-    ImageView backIcon;
+    private RecyclerView listView;
+    private ImageView backIcon, profileIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +32,26 @@ public class ProductStockListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_product_stock_list);
 
         backIcon = findViewById(R.id.back_icon);
+        profileIcon = findViewById(R.id.profile);
+        listView = findViewById(R.id.product_stock_list);
         List<Product> products = new ArrayList<>();
+        getSupportActionBar().hide();
+
         ProductStockAdapter productStockAdapter = new ProductStockAdapter(this, products);
-        FirebaseConfig.database.getReference("products").addValueEventListener(new ValueEventListener() {
+        listView.setAdapter(productStockAdapter);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        listView.setLayoutManager(layoutManager);
+
+        FirebaseConfig.getReference("products").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 products.clear();
                 for(DataSnapshot typeSnapshot: snapshot.getChildren()){
-                    Product product = new Product();
-                    product.setType(typeSnapshot.child("name").getValue().toString());
 
                     for (DataSnapshot productSnapshot: typeSnapshot.child("product_list").getChildren()){
+                        Product product = new Product();
+                        product.setType(typeSnapshot.child("name").getValue().toString());
+                        product.setTypeCode(typeSnapshot.getKey());
                         product.setCode(productSnapshot.getKey());
                         product.setName(productSnapshot.child("name").getValue().toString());
                         product.setCategory(productSnapshot.child("category").getValue().toString());
@@ -50,9 +61,9 @@ public class ProductStockListActivity extends AppCompatActivity {
 
                         products.add(product);
                     }
-                    productStockAdapter.notifyDataSetChanged();
-                }
 
+                }
+                productStockAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -60,10 +71,14 @@ public class ProductStockListActivity extends AppCompatActivity {
 
             }
         });
+        Log.d("SIZE : ", String.valueOf(products.size()));
 
-        listView.setAdapter(productStockAdapter);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        listView.setLayoutManager(layoutManager);
+        profileIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProductStockListActivity.this, ProfileActivity.class));
+            }
+        });
 
         backIcon.setOnClickListener(new View.OnClickListener() {
             @Override

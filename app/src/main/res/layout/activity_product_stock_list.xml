@@ -8,6 +8,7 @@
 
     <include android:id="@+id/bar" layout="@layout/layout_action_bar2"/>
     <androidx.recyclerview.widget.RecyclerView
+        android:paddingTop="10dp"
         android:id="@+id/product_stock_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

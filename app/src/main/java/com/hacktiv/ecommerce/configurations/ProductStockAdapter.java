@@ -2,6 +2,7 @@ package com.hacktiv.ecommerce.configurations;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,15 +40,22 @@ public class ProductStockAdapter extends RecyclerView.Adapter<ProductStockAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Product product = list.get(position);
         holder.type.setText(product.getType());
+
         holder.code.setText(product.getCode());
         holder.productName.setText(product.getName());
         holder.category.setText(product.getCategory());
-        holder.stock.setText(product.getStock());
+        holder.stock.setText(product.getStock().toString());
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle data = new Bundle();
+                data.putString("type_code",product.getTypeCode());
+                data.putString("product_name", product.getName());
+                data.putString("stock", product.getStock().toString());
+                data.putString("code", product.getCode());
                 Intent i = new Intent(context, AddStockActivity.class);
-                i.putExtra("code", product.getCode());
+                i.putExtras(data);
+
                 context.startActivity(i);
             }
         });
@@ -56,7 +64,7 @@ public class ProductStockAdapter extends RecyclerView.Adapter<ProductStockAdapte
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

@@ -3,6 +3,7 @@
     <string name="title_activity_staff_login">StaffLoginActivity</string>
     <string name="username">Username</string>
     <string name="email">Email</string>
+    <string name="role">Role</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="login_as_staff">Login As Staff</string>
@@ -21,6 +22,10 @@
     <string name="add_quantity">Add Quantity</string>
     <string name="dashboard">Dashboard</string>
     <string name="home">Home</string>
+    <string name="code">Code</string>
+    <string name="product_name">Product Name</string>
+    <string name="stock">Stock</string>
+
     <string-array name="member">
         <item>Fadhilah Rizki Fatoni</item>
         <item>Fajar Wirahadi Kusuma</item>

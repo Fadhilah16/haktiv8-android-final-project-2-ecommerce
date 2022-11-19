@@ -19,11 +19,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activities.ProfileActivity"
+            android:exported="true" />
+        <activity
             android:name=".activities.ProductStockListActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".activities.HomepageActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".activities.AddStockActivity"
             android:exported="true" />
