@@ -131,7 +131,6 @@ public class HomepageActivity extends FragmentActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     ProductType productType = dataSnapshot.getValue(ProductType.class);
-                    Log.d("Image", productType.getImg());
                     list.add(productType);
                 }
                 adapter.notifyDataSetChanged();

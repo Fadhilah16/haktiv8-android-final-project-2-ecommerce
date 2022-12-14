@@ -8,32 +8,36 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestManager;
+import com.bumptech.glide.request.target.Target;
 import com.hacktiv.ecommerce.R;
 import com.hacktiv.ecommerce.activities.ClothingProductActivity;
-import com.hacktiv.ecommerce.activities.HomepageActivity;
-import com.hacktiv.ecommerce.activities.electronics_product.ElectronicsProductActivity;
-import com.hacktiv.ecommerce.models.ProductType;
+import com.hacktiv.ecommerce.activities.clothing_product.WomenBottomwearCategoryActivity;
+import com.hacktiv.ecommerce.activities.clothing_product.WomenFormalCategoryActivity;
+import com.hacktiv.ecommerce.activities.clothing_product.WomenShoesCategoryActivity;
+import com.hacktiv.ecommerce.activities.clothing_product.WomenTshirtCategoryActivity;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class
-ProductTypeAdapter extends RecyclerView.Adapter<ProductTypeAdapter.ViewHolder> {
+ClothingWomenAdapter extends RecyclerView.Adapter<ClothingWomenAdapter.ViewHolder> {
 
-    List<ProductType> list;
+    List<String> title, image;
     Context context;
 
 
-    public ProductTypeAdapter(Context context, List<ProductType> list) {
+    public ClothingWomenAdapter(Context context, List<String> title, List<String> image) {
         this.context = context;
-        this.list = list;
+        this.title = title;
+        this.image = image;
 
     }
 
@@ -47,39 +51,42 @@ ProductTypeAdapter extends RecyclerView.Adapter<ProductTypeAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         int currentPosition = position;
-        ProductType productType = list.get(position);
-        holder.categories.setText(productType.getName());
-        Glide.with(context)
-                .load(productType.getImg())
-                .centerCrop()
-                .into(holder.gridImage);
-//        holder.categories.setText(categories.get(position));
-//        holder.gridImage.setImageResource(images.get(position));
+        holder.categories.setText(String.valueOf(title.get(position)));
+        holder.gridImage.setImageResource(Integer.parseInt(image.get(position)));
         holder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 final Intent intent;
                 switch (currentPosition) {
                     case 0:
-                        intent = new Intent(view.getContext(), ClothingProductActivity.class);
+                        intent = new Intent(view.getContext(), WomenTshirtCategoryActivity.class);
                         context.startActivity(intent);
                         break;
                     case 1:
-                        intent = new Intent(view.getContext(), ElectronicsProductActivity.class);
+                        intent = new Intent(view.getContext(), WomenFormalCategoryActivity.class);
                         context.startActivity(intent);
                         break;
-                }
+                    case 2:
+                        intent = new Intent(view.getContext(), WomenBottomwearCategoryActivity.class);
+                        context.startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(view.getContext(), WomenShoesCategoryActivity.class);
+                        context.startActivity(intent);
+                        break;
 
+
+                }
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return title.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView categories;
         ImageView gridImage;
         CardView cardView;
@@ -90,29 +97,7 @@ ProductTypeAdapter extends RecyclerView.Adapter<ProductTypeAdapter.ViewHolder> {
             categories = itemView.findViewById(R.id.textView);
             gridImage = itemView.findViewById(R.id.imageView);
             cardView = itemView.findViewById(R.id.cardView);
-//            context = itemView.getContext();
-        }
-
-        @Override
-        public void onClick(View view) {
-
-            final Intent intent;
-            switch(getAdapterPosition()) {
-                case 0:
-                    intent = new Intent(context, ClothingProductActivity.class);
-                    context.startActivity(intent);
-                    break;
-
-                case 1:
-                    intent = new Intent(context, ClothingProductActivity.class);
-                    context.startActivity(intent);
-                    break;
-
-                default:
-                    intent = new Intent(context, ClothingProductActivity.class);
-                    break;
-            }
-                context.startActivity(intent);
+            context = itemView.getContext();
         }
     }
 
