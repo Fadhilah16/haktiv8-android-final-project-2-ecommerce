@@ -54,7 +54,6 @@ public class AddStaffActivity extends AppCompatActivity {
         backIcon = findViewById(R.id.back_icon);
         profileIcon = findViewById(R.id.profile);
 
-        getSupportActionBar().hide();
         if(savedInstanceState!= null) {
             username.setText(savedInstanceState.getString("username"));
             email.setText(savedInstanceState.getString("email"));

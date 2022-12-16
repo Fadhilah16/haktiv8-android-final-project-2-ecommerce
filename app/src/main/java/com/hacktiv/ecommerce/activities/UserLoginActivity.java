@@ -50,7 +50,6 @@ public class UserLoginActivity extends AppCompatActivity {
             finish();
         }
 
-        getSupportActionBar().hide();
         if(savedInstanceState!= null) {
             username.setText(savedInstanceState.getString("username"));
             password.setText(savedInstanceState.getString("password"));

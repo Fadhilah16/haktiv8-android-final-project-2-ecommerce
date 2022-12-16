@@ -23,7 +23,6 @@ public class AddStockActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_stock);
-        getSupportActionBar().hide();
         code = findViewById(R.id.code);
         productName = findViewById(R.id.productName);
         stock = findViewById(R.id.stock);

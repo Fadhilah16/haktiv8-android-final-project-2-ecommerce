@@ -63,19 +63,19 @@ public class HomepageActivity extends FragmentActivity {
         navView = findViewById(R.id.nav_view);
         profileIcon = findViewById(R.id.profile);
 
-//        FirebaseConfig.firestore.collection("users").document( FirebaseConfig.auth.getCurrentUser().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                if (task.isSuccessful()){
-//                    DocumentSnapshot document = task.getResult();
-//                    if (document.exists()){
-//                        if (!document.getString("role").equals(RoleTypes.ADMIN.name())){
-//                            navView.getMenu().findItem(R.id.dashboard_menu).setVisible(false);
-//                        }
-//                    }
-//                }
-//            }
-//        });
+        FirebaseConfig.firestore.collection("users").document( FirebaseConfig.auth.getCurrentUser().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()){
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()){
+                        if (!document.getString("role").equals(RoleTypes.ADMIN.name())){
+                            navView.getMenu().findItem(R.id.dashboard_menu).setVisible(false);
+                        }
+                    }
+                }
+            }
+        });
 
         list = new ArrayList<>();
         listPromo = new ArrayList<>();

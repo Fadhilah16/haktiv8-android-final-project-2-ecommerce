@@ -20,7 +20,6 @@ public class AdminDashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dashboard);
 
-        getSupportActionBar().hide();
         addStaff = findViewById(R.id.addStaffBtn);
         addStock = findViewById(R.id.addStockBtn);
         backIcon = findViewById(R.id.back_icon);

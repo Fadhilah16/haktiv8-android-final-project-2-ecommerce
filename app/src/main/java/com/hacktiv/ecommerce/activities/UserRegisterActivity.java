@@ -62,7 +62,6 @@ public class UserRegisterActivity extends AppCompatActivity {
             finish();
         }
 
-        getSupportActionBar().hide();
         if(savedInstanceState!= null) {
             username.setText(savedInstanceState.getString("username"));
             email.setText(savedInstanceState.getString("email"));

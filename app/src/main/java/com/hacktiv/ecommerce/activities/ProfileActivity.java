@@ -29,7 +29,6 @@ public class ProfileActivity extends AppCompatActivity {
         role = findViewById(R.id.role);
         backIcon = findViewById(R.id.back_icon);
 
-        getSupportActionBar().hide();
 
         FirebaseConfig.firestore.collection("users").document(FirebaseConfig.auth.getCurrentUser().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override

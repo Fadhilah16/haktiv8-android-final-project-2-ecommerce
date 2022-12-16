@@ -35,7 +35,6 @@ public class ProductStockListActivity extends AppCompatActivity {
         profileIcon = findViewById(R.id.profile);
         listView = findViewById(R.id.product_stock_list);
         List<Product> products = new ArrayList<>();
-        getSupportActionBar().hide();
 
         ProductStockAdapter productStockAdapter = new ProductStockAdapter(this, products);
         listView.setAdapter(productStockAdapter);
