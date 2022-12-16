@@ -18,6 +18,9 @@ import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.target.Target;
 import com.hacktiv.ecommerce.R;
 import com.hacktiv.ecommerce.activities.ClothingProductActivity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.MenShirt1Activity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.MenShirt2Activity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.MenShirt3Activity;
 
 
 import java.util.ArrayList;
@@ -46,6 +49,7 @@ TshirtMenAdapter extends RecyclerView.Adapter<TshirtMenAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        int currentPosition = position;
         holder.categories.setText(String.valueOf(title.get(position)));
         holder.gridImage.setImageResource(Integer.parseInt(image.get(position)));
 //        Glide.with(context)
@@ -62,8 +66,22 @@ TshirtMenAdapter extends RecyclerView.Adapter<TshirtMenAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ClothingProductActivity.class);
-                context.startActivity(intent);
+                final Intent intent;
+                switch (currentPosition) {
+                    case 0:
+                        intent = new Intent(view.getContext(), MenShirt1Activity.class);
+                        context.startActivity(intent);
+                        break;
+                    case 1:
+                        intent = new Intent(view.getContext(), MenShirt2Activity.class);
+                        context.startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(view.getContext(), MenShirt3Activity.class);
+                        context.startActivity(intent);
+                        break;
+                }
+
 
             }
         });

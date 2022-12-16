@@ -17,6 +17,9 @@ import com.hacktiv.ecommerce.activities.ClothingProductActivity;
 import com.hacktiv.ecommerce.activities.clothing_product.MenBottomwearCategoryActivity;
 import com.hacktiv.ecommerce.activities.clothing_product.MenFormalCategoryActivity;
 import com.hacktiv.ecommerce.activities.clothing_product.MenTshirtCategoryActivity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.MenShoes1Activity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.MenShoes2Activity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.MenShoes3Activity;
 
 
 import java.util.ArrayList;
@@ -55,15 +58,15 @@ ShoesMenAdapter extends RecyclerView.Adapter<ShoesMenAdapter.ViewHolder> {
                 final Intent intent;
                 switch (position1) {
                     case 0:
-                        intent = new Intent(view.getContext(), MenTshirtCategoryActivity.class);
+                        intent = new Intent(view.getContext(), MenShoes1Activity.class);
                         context.startActivity(intent);
                         break;
                     case 1:
-                        intent = new Intent(view.getContext(), MenFormalCategoryActivity.class);
+                        intent = new Intent(view.getContext(), MenShoes2Activity.class);
                         context.startActivity(intent);
                         break;
                     case 2:
-                        intent = new Intent(view.getContext(), MenBottomwearCategoryActivity.class);
+                        intent = new Intent(view.getContext(), MenShoes3Activity.class);
                         context.startActivity(intent);
                         break;
                 }

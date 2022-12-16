@@ -20,6 +20,8 @@ import com.hacktiv.ecommerce.R;
 import com.hacktiv.ecommerce.activities.ClothingProductActivity;
 import com.hacktiv.ecommerce.activities.clothing_product.MenClothingActivity;
 import com.hacktiv.ecommerce.activities.clothing_product.WomenClothingActivity;
+import com.hacktiv.ecommerce.activities.electronics_product.LaptopCategoryActivity;
+import com.hacktiv.ecommerce.activities.electronics_product.SmartPhoneCategoryActivity;
 
 
 import java.util.ArrayList;
@@ -57,11 +59,11 @@ ElectronicsAdapter extends RecyclerView.Adapter<ElectronicsAdapter.ViewHolder> {
                 final Intent intent;
                 switch (currentPosition){
                     case 0:
-                        intent = new Intent(view.getContext(), MenClothingActivity.class);
+                        intent = new Intent(view.getContext(), LaptopCategoryActivity.class);
                         context.startActivity(intent);
                         break;
                     case 1:
-                        intent = new Intent(view.getContext(), WomenClothingActivity.class);
+                        intent = new Intent(view.getContext(), SmartPhoneCategoryActivity.class);
                         context.startActivity(intent);
                         break;
                 }

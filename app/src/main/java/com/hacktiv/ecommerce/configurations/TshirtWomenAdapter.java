@@ -18,6 +18,9 @@ import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.target.Target;
 import com.hacktiv.ecommerce.R;
 import com.hacktiv.ecommerce.activities.ClothingProductActivity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.WomenShirt1Activity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.WomenShirt2Activity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.WomenShirt3Activity;
 
 
 import java.util.ArrayList;
@@ -54,8 +57,16 @@ TshirtWomenAdapter extends RecyclerView.Adapter<TshirtWomenAdapter.ViewHolder> {
             public void onClick(View view) {
                 final Intent intent;
                 switch (currentPosition) {
+                    case 0:
+                        intent = new Intent(view.getContext(), WomenShirt1Activity.class);
+                        context.startActivity(intent);
+                        break;
                     case 1:
-                        intent = new Intent(view.getContext(), ClothingProductActivity.class);
+                        intent = new Intent(view.getContext(), WomenShirt2Activity.class);
+                        context.startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(view.getContext(), WomenShirt3Activity.class);
                         context.startActivity(intent);
                         break;
 

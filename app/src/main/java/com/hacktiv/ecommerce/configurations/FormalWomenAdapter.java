@@ -19,6 +19,9 @@ import com.bumptech.glide.request.target.Target;
 import com.hacktiv.ecommerce.R;
 import com.hacktiv.ecommerce.activities.ClothingProductActivity;
 import com.hacktiv.ecommerce.activities.clothing_product.WomenTshirtCategoryActivity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.WomenFormal1Activity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.WomenFormal2Activity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.WomenFormal3Activity;
 
 
 import java.util.ArrayList;
@@ -56,7 +59,15 @@ FormalWomenAdapter extends RecyclerView.Adapter<FormalWomenAdapter.ViewHolder> {
                 final Intent intent;
                 switch (currentPosition) {
                     case 0:
-                        intent = new Intent(view.getContext(), WomenTshirtCategoryActivity.class);
+                        intent = new Intent(view.getContext(), WomenFormal1Activity.class);
+                        context.startActivity(intent);
+                        break;
+                    case 1:
+                        intent = new Intent(view.getContext(), WomenFormal2Activity.class);
+                        context.startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(view.getContext(), WomenFormal3Activity.class);
                         context.startActivity(intent);
                         break;
 

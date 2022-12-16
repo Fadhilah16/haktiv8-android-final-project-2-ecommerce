@@ -15,6 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.hacktiv.ecommerce.R;
 import com.hacktiv.ecommerce.activities.ClothingProductActivity;
 import com.hacktiv.ecommerce.activities.clothing_product.MenTshirtCategoryActivity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.MenFormal1Activity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.MenFormal2Activity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.MenFormal3Activity;
 
 
 import java.util.ArrayList;
@@ -43,16 +46,25 @@ FormalMenAdapter extends RecyclerView.Adapter<FormalMenAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        int position1 = position;
+        int currentPosition = position;
         holder.categories.setText(String.valueOf(title.get(position)));
         holder.gridImage.setImageResource(Integer.parseInt(image.get(position)));
 
         holder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                switch (position1) {
+                final Intent intent;
+                switch (currentPosition) {
                     case 0:
-                        Intent intent = new Intent(view.getContext(), MenTshirtCategoryActivity.class);
+                        intent = new Intent(view.getContext(), MenFormal1Activity.class);
+                        context.startActivity(intent);
+                        break;
+                    case 1:
+                        intent = new Intent(view.getContext(), MenFormal2Activity.class);
+                        context.startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(view.getContext(), MenFormal3Activity.class);
                         context.startActivity(intent);
                         break;
                 }

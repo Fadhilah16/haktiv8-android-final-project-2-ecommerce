@@ -18,7 +18,9 @@ import com.bumptech.glide.Glide;
 import com.hacktiv.ecommerce.R;
 import com.hacktiv.ecommerce.activities.ClothingProductActivity;
 import com.hacktiv.ecommerce.activities.HomepageActivity;
+import com.hacktiv.ecommerce.activities.books_produt.BooksProductActivity;
 import com.hacktiv.ecommerce.activities.electronics_product.ElectronicsProductActivity;
+import com.hacktiv.ecommerce.activities.groceries_product.GroceriesProductActivity;
 import com.hacktiv.ecommerce.models.ProductType;
 
 
@@ -66,6 +68,14 @@ ProductTypeAdapter extends RecyclerView.Adapter<ProductTypeAdapter.ViewHolder> {
                         break;
                     case 1:
                         intent = new Intent(view.getContext(), ElectronicsProductActivity.class);
+                        context.startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(view.getContext(), BooksProductActivity.class);
+                        context.startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(view.getContext(), GroceriesProductActivity.class);
                         context.startActivity(intent);
                         break;
                 }

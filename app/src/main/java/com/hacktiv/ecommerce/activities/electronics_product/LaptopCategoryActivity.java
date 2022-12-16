@@ -30,10 +30,9 @@ public class LaptopCategoryActivity extends AppCompatActivity {
 
         title.add("MacBook PRO 16 MK1E3ID/A(Apple M1 PRO/16GB/512GB SSD/16\"/MAC OS/SILVER");
         title.add("Asus VivoBook S412");
-        title.add("Women");
+        title.add("ASUS 15.6\" Republic of Gamers Zephyrus Duo 15 Gaming Laptop,");
         image.add(String.valueOf(R.drawable.computer));
         image.add(String.valueOf(R.drawable.laptop_2));
-
         image.add(String.valueOf(R.drawable.laptop_3));
 
         laptopAdapter = new LaptopAdapter(LaptopCategoryActivity.this, title, image);

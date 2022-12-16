@@ -20,6 +20,9 @@ import com.hacktiv.ecommerce.R;
 import com.hacktiv.ecommerce.activities.ClothingProductActivity;
 import com.hacktiv.ecommerce.activities.clothing_product.MenClothingActivity;
 import com.hacktiv.ecommerce.activities.clothing_product.WomenClothingActivity;
+import com.hacktiv.ecommerce.activities.electronics_product.detail_product.Laptop1Activity;
+import com.hacktiv.ecommerce.activities.electronics_product.detail_product.Laptop2Activity;
+import com.hacktiv.ecommerce.activities.electronics_product.detail_product.Laptop3Activity;
 
 
 import java.util.ArrayList;
@@ -57,11 +60,15 @@ public class LaptopAdapter extends RecyclerView.Adapter<LaptopAdapter.ViewHolder
                 final Intent intent;
                 switch (currentPosition){
                     case 0:
-                        intent = new Intent(view.getContext(), MenClothingActivity.class);
+                        intent = new Intent(view.getContext(), Laptop1Activity.class);
                         context.startActivity(intent);
                         break;
                     case 1:
-                        intent = new Intent(view.getContext(), WomenClothingActivity.class);
+                        intent = new Intent(view.getContext(), Laptop2Activity.class);
+                        context.startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(view.getContext(), Laptop3Activity.class);
                         context.startActivity(intent);
                         break;
                 }

@@ -21,6 +21,9 @@ import com.hacktiv.ecommerce.activities.ClothingProductActivity;
 import com.hacktiv.ecommerce.activities.clothing_product.WomenBottomwearCategoryActivity;
 import com.hacktiv.ecommerce.activities.clothing_product.WomenFormalCategoryActivity;
 import com.hacktiv.ecommerce.activities.clothing_product.WomenTshirtCategoryActivity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.WomenShoes1Activity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.WomenShoes2Activity;
+import com.hacktiv.ecommerce.activities.clothing_product.detail_product.WomenShoes3Activity;
 
 
 import java.util.ArrayList;
@@ -58,15 +61,15 @@ ShoesWomenAdapter extends RecyclerView.Adapter<ShoesWomenAdapter.ViewHolder> {
                 final Intent intent;
                 switch (currentPosition) {
                     case 0:
-                        intent = new Intent(view.getContext(), WomenTshirtCategoryActivity.class);
+                        intent = new Intent(view.getContext(), WomenShoes1Activity.class);
                         context.startActivity(intent);
                         break;
                     case 1:
-                        intent = new Intent(view.getContext(), WomenFormalCategoryActivity.class);
+                        intent = new Intent(view.getContext(), WomenShoes2Activity.class);
                         context.startActivity(intent);
                         break;
                     case 2:
-                        intent = new Intent(view.getContext(), WomenBottomwearCategoryActivity.class);
+                        intent = new Intent(view.getContext(), WomenShoes3Activity.class);
                         context.startActivity(intent);
                         break;
 
